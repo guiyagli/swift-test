@@ -35,47 +35,22 @@
 //}
 //
 //
-//func makeIncrementor(forIncrement amount: Int) -> (() -> Int) {
-//    var runningTotal = 0
-//    func incrementor() -> Int {
-//        runningTotal += amount
-//        return runningTotal
-//    }
-//    return incrementor
-//}
-//var incrementByTen = makeIncrementor(forIncrement: 10)
-//var incrementBySeven = makeIncrementor(forIncrement: 7)
-//print(incrementByTen())
-//print(incrementByTen())
-//print(incrementByTen())
-//print(incrementBySeven())
-//print(incrementBySeven())
-//print(incrementBySeven())
-
-var primes = [Int]()
-for i in 2...100 {
-    var isPrime = true
-    for j in 2..<i {
-        if i % j == 0 {
-            isPrime = false
-        }
+func makeIncrementor(forIncrement amount: Int) -> (() -> Int) {
+    var runningTotal = 0
+    func incrementor() -> Int {
+        runningTotal += amount
+        return runningTotal
     }
-    if isPrime {
-        primes.append(i)
-    }
+    return incrementor
 }
-primes.append(2)
-primes.append(5)
-primes.append(3)
-
-//func compare(one:Int,two:Int) -> Bool {
-//    return one > two
-//}
-
-primes.sort(by: >)
-
-print(primes)
-
+var incrementByTen = makeIncrementor(forIncrement: 10)
+var incrementBySeven = makeIncrementor(forIncrement: 7)
+print(incrementByTen())
+print(incrementByTen())
+print(incrementByTen())
+print(incrementBySeven())
+print(incrementBySeven())
+print(incrementBySeven())
 
 
 
